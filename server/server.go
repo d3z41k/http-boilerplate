@@ -3,6 +3,7 @@ package server
 import (
 	"fmt"
 	"net/http"
+	"path/filepath"
 
 	"github.com/go-chi/chi"
 )
@@ -18,6 +19,12 @@ func NewRouter() http.Handler {
 
 	// Set up our root handlers
 	r.Get("/", HelloWorld)
+
+	// Set up static file serving
+	staticPath, _ := filepath.Abs("static")
+	// fs := http.FileServer(unindexed.Dir(staticPath)) // safe static distrib
+	fs := http.FileServer(http.Dir(staticPath))
+	r.Handle("/*", fs)
 
 	return r
 }
