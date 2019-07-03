@@ -2,25 +2,16 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"os"
 	"os/signal"
 	"time"
 
-	"github.com/go-chi/chi"
+	"projects/http-boilerplate/server"
 )
 
-func NewRouter() http.Handler {
-	r := chi.NewRouter()
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "Hello world!")
-	})
-	return r
-}
-
 func main() {
-	handler := NewRouter()
+	handler := server.NewRouter()
 	srv := &http.Server{
 		Addr:         ":8080",
 		Handler:      handler,
