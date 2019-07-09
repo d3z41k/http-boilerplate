@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"path/filepath"
+	v1 "projects/http-boilerplate/api/v1"
 	"time"
 
 	"github.com/go-chi/chi"
@@ -28,6 +29,9 @@ func NewRouter() http.Handler {
 
 	// Set up our root handlers
 	r.Get("/", HelloWorld)
+
+	// Set up our API
+	r.Mount("/api/v1/", v1.NewRouter())
 
 	// Set up static file serving
 	staticPath, _ := filepath.Abs("static")
