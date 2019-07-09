@@ -11,6 +11,8 @@ import (
 )
 
 func main() {
+	// This is the domain the server should accept connections for.
+	// domains := []string{"example.com", "www.example.com"}
 	handler := server.NewRouter()
 	srv := &http.Server{
 		Addr:         ":8080",
@@ -22,6 +24,7 @@ func main() {
 
 	// Start the server
 	go srv.ListenAndServe()
+	// go srv.Serve(autocert.NewListener(domains...))
 
 	// Wait for an interrupt
 	c := make(chan os.Signal, 1)
