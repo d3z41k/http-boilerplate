@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"time"
 
-	"projects/http-boilerplate/server"
+	"github.com/d3z41k/http-boilerplate/server"
 )
 
 func main() {

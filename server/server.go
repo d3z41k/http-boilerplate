@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"path/filepath"
-	v1 "projects/http-boilerplate/api/v1"
+	v1 "github.com/d3z41k/http-boilerplate/api/v1"
 	"time"
 
 	"github.com/go-chi/chi"
