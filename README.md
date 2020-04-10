@@ -7,7 +7,7 @@ An example of a web server in Go.
 Build image
 
 ```
-docker build -t go-docker .
+docker build -t http-boilerplate .
 ```
 
 Image list
@@ -25,7 +25,7 @@ docker image rm <image id>
 Run docker image
 
 ```
-docker run -d -p 8080:8080 http-boilerpalate
+docker run -d -p 8080:8080 http-boilerplate
 ```
 
 Container list
